@@ -115,3 +115,15 @@ After running this line of code, you will have four variables:
 - **`y_test`**: The corresponding labels for testing.
 
 This splitting is crucial to assess how well your machine learning model generalizes to new, unseen data.
+
+Step 7.
+
+This code is related to text data preprocessing, specifically using the TF-IDF (Term Frequency-Inverse Document Frequency) vectorization technique. Let's break it down:
+
+1. **`vectorization = TfidfVectorizer()`**: This line creates an instance of the `TfidfVectorizer` class. `TfidfVectorizer` is a method for converting a collection of raw text documents to a matrix of TF-IDF features. TF-IDF is a numerical statistic that reflects how important a word is to a document in a collection or corpus.
+
+2. **`xv_train = vectorization.fit_transform(x_train)`**: This line applies the TF-IDF vectorization to the training set (`x_train`). The `fit_transform` method fits the vectorizer to the training data and then transforms it into a TF-IDF matrix. The resulting `xv_train` variable holds the TF-IDF representations of the training text data.
+
+3. **`xv_test = vectorization.transform(x_test)`**: This line uses the previously fitted vectorizer to transform the test set (`x_test`) into TF-IDF matrix representations. The `transform` method applies the same transformations learned from the training set to the test set. The resulting `xv_test` variable contains the TF-IDF representations of the test text data.
+
+In summary, this code snippet prepares text data for machine learning by converting it into a numerical format using TF-IDF vectorization. The `TfidfVectorizer` is trained on the training set and then applied to both the training and test sets, resulting in numerical representations of the text that can be used as input for machine learning models.
